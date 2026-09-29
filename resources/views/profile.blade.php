@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+@extends('layouts.main')
 
-    <title>profile</title>
-</head>
-<body>
+
+@section('content')
     <h1>HALAMAN PROFILE</h1>
-    <p>
-        Nama  : Sabilaa Azka <br>
-        Prodi : In TI
+    <p>Nama : {{ $nama }}</p>
+    <p>Nim : {{ $nim }}</p>
+    <p>Prodi : {{ $prodi }}</p>
 
-    </p>    
-    <script src ="js/alert.js"></script>
-    <img src="images/logoti.png"></img>
-</body>
-</html>
+<img src="{{ asset('images/' . $gambar) }}" width="200"></img>
+@endsection
