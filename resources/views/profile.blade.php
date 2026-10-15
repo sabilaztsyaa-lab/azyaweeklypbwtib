@@ -3,7 +3,7 @@
 
 @section('content')
     <h1>HALAMAN PROFILE</h1>
-    <p>Nama : {{ $nama }}</p>
+    <p>Nama : {{ $name }}</p>
     <p>Nim : {{ $nim }}</p>
     <p>Prodi : {{ $prodi }}</p>
 

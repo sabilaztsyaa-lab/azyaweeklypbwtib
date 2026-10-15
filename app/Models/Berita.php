@@ -8,16 +8,16 @@ class Berita extends Model
 {
     private static $data_berita = [
         [
-            "judul" => "Berita 1",
-            "slug" => "berita-1",
-            "penulis" => "Penulis 1",
-            "isi" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            'judul' => 'Mahasiswa TI',
+            'slug' => 'mahasiswa-ti',
+            'penulis' => 'Azya',
+            'konten' => 'Mahasiswa Teknologi Informasi mempelajari dan mengembangkan pengetahuan serta keterampilan dalam bidang teknologi informasi.',
         ],
         [
-            "judul" => "Berita 2",
-            "slug" => "berita-2",
-            "penulis" => "Penulis 2",
-            "isi" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            'judul' => 'Mahasiswa Informatika',
+            'slug' => 'mahasiswa-informatika',
+            'penulis' => 'Fandi',
+            'konten' => 'Mahasiswa Informatika mempelajari dan mengembangkan pengetahuan serta keterampilan dalam bidang informatika.',
         ],
     ];
 
@@ -28,8 +28,11 @@ class Berita extends Model
 
     public static function getBerita($slug)
     {
-        return collect(self::$data_berita)
-            ->firstWhere('slug', $slug);
+        foreach (self::$data_berita as $berita) {
+            if ($berita['slug'] === $slug) {
+                return $berita;
+            }
+        }
     }
 
     public static function getTitle($slug)

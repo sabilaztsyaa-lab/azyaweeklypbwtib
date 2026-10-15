@@ -10,20 +10,21 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link {{ ($title === 'Home' ? 'active' : '') }}" aria-current="page"
-          href="/">Home</a>
+          <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
+        </li>
+
+        
+        <li class="nav-item">
+          <a class="nav-link {{ request()->is('berita*') ? 'active' : '' }}" href="/berita">Berita</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link {{ request()->is('profile') ? 'active' : '' }}" aria-current="page" href="/profile">Profile</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link {{ ($title === 'Berita' ? 'active' : '') }}" aria-current="page" href="/berita">berita</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link {{ ($title === 'Profile' ? 'active' : '') }}" aria-current="page" href="/profile">profile</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link {{ ($title === 'Contact' ? 'active' : '') }}" aria-current="page" href="/contact">contact</a>
+          <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" aria-current="page" href="/contact">Contact</a>
         </li>
 
       </ul>
